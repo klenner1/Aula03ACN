@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  aula03acn:
+    image: aula03acn
+    build:
+      context: .
+      dockerfile: Aula03ACN/Dockerfile
