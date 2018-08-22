@@ -4,8 +4,8 @@ EXPOSE 5000
 
 FROM microsoft/aspnetcore-build:2.0 AS build
 WORKDIR /src
-COPY Aula03ACN.sln ./
-COPY Aula03ACN/Aula03ACN.csproj Aula03ACN/
+COPY ../Aula03ACN.sln ./
+COPY ../Aula03ACN/Aula03ACN.csproj Aula03ACN/
 RUN dotnet restore
 COPY . .
 WORKDIR /src/Aula03ACN
