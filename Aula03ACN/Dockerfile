@@ -1,10 +1,10 @@
 FROM microsoft/aspnetcore:2.0 AS base
 WORKDIR /app
-EXPOSE 80
+EXPOSE 5000
 
 FROM microsoft/aspnetcore-build:2.0 AS build
 WORKDIR /src
-COPY *.sln ./
+COPY Aula03ACN.sln ./
 COPY Aula03ACN/Aula03ACN.csproj Aula03ACN/
 RUN dotnet restore
 COPY . .
