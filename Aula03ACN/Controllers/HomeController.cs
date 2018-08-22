@@ -10,23 +10,16 @@ namespace Aula03ACN.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public ActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        public ActionResult Convert(double c)
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
+            double f = (c / 5 *9) + 32;
+            var data = new { Celsius = f };
+            return Json(data);
         }
 
         public IActionResult Error()
