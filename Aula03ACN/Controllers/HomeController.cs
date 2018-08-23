@@ -15,11 +15,22 @@ namespace Aula03ACN.Controllers
             return View();
         }
 
-        public ActionResult Convert(double c)
+        public ActionResult Convert(string val)
         {
-            double f = (c / 5 *9) + 32;
-            var data = new { Celsius = f };
-            return Json(data);
+            Celsius data = new Celsius();
+            if (val != null)
+            {
+                double c = Double.Parse(val);
+                double f = (c / 5 * 9) + 32;
+                data.val =  f ;
+            }
+            else
+            {
+                data.val = 0;
+            }
+
+                return Json(data);
+            
         }
 
         public IActionResult Error()
